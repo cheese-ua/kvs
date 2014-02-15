@@ -1,0 +1,20 @@
+% -*- mode: Erlang;-*-
+{application, kvs,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [kernel, stdlib]},
+  {mod, {kvs_app, []}},
+  {env, [
+    {mode, test},
+    {production, [
+                  {data_file, "priv/data"},
+                  {flush_interval, 10}
+    ]},
+    {test, [
+                  {data_file, "priv/data_test"},
+                  {flush_interval, 10}
+    ]}
+	]}
+ ]}.
